@@ -15,7 +15,7 @@ class ReservationScreenViewModal extends BaseViewModel {
   void init(BuildContext context) async {
     setBusy(true);
     var response = await FetchReservations.fetchChargingPoints(_dioInstance);
-    if (response.error != null) {
+    if (response.error == null) {
       list = response.data;
     } else {
       if (context.mounted) {
